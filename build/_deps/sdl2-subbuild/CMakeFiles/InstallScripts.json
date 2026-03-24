@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"F:/C++GameEngine/build/_deps/sdl2-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

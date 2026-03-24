@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"F:/C++GameEngine/build/_deps/imgui-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

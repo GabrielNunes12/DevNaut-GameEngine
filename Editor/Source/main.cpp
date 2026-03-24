@@ -5,6 +5,7 @@
 #include "Editor/TransformCommand.h"
 #include "Editor/EntityCommand.h"
 #include "Renderer/DebugRenderer.h"
+#include "AgentInspector.h"
 
 // ── HLSL Shaders (embedded) ────────────────────────────────────────────────
 
@@ -191,6 +192,14 @@ public:
             m_CommandHistory.AddCommand(std::make_shared<Nova::AddEntityCommand>(m_Scene, ptr));
         }));
         m_MenuCategories.push_back(addMenu);
+
+        // AI Menu
+        Nova::MenuCategory aiMenu;
+        aiMenu.Name = "AI Agents";
+        aiMenu.Actions.push_back(std::make_shared<Nova::LambdaAction>("Open Command Center", [this]() { 
+            // The panel is always on, but we could add a toggle here
+        }));
+        m_MenuCategories.push_back(aiMenu);
     }
 
     void OnUpdate(float dt) override {
@@ -369,6 +378,9 @@ public:
             }
             ImGui::EndMainMenuBar();
         }
+
+        m_AgentInspector.OnImGuiRender();
+
         ImGui::Begin("Hierarchy");
         for (auto& e : m_Scene.GetEntities()) {
             bool isSelected = (e.get() == m_Scene.GetSelectedEntity());
@@ -409,6 +421,8 @@ private:
     Nova::Gizmo            m_Gizmo;
     Nova::CommandHistory   m_CommandHistory;
     Nova::DebugRenderer    m_DebugRenderer;
+    Nova::AgentInspector   m_AgentInspector;
+
     GizmoMode      m_GizmoMode = GizmoMode::None;
     TransformMode  m_TransformMode = TransformMode::Position;
     Nova::Transform m_InitialTransform;
