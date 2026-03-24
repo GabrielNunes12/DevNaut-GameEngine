@@ -15,13 +15,18 @@ namespace Nova {
     class AgentRoleRegistry {
     public:
         static std::string GetGlobalCapabilities() {
-            return "--- ENGINE CAPABILITIES ---\n"
-                   "You can manipulate the engine world by outputting raw commands at the VERY END of your response.\n"
-                   "COMMAND FORMAT: NOVA_CMD:ACTION[param1][param2]\n"
+            return "--- ENGINE CAPABILITIES (LEVEL DESIGNER) ---\n"
+                   "You can build or modify levels by outputting multiple raw command blocks at the VERY END of your response.\n"
+                   "COMMAND FORMAT (ONE COMMAND PER LINE): NOVA_CMD:ACTION[param1][param2]...\n"
                    "AVAILABLE ACTIONS:\n"
-                   "1. SPAWN[type][name] : type must be 'cube'. Example: NOVA_CMD:SPAWN[cube][GroundCube]\n"
-                   "2. DELETE[name] : deletes entity by name. Example: NOVA_CMD:DELETE[GroundCube]\n"
-                   "Always use the command if the user asks you to create or add something to the scene.";
+                   "1. SPAWN[cube][name][x,y,z][scale] : Spawns an object at world coordinates. Example: NOVA_CMD:SPAWN[cube][Ground][-5,0,0][2.0]\n"
+                   "2. MOVE[name][x,y,z] : Repositions an existing entity. Example: NOVA_CMD:MOVE[Ground][0,2,0]\n"
+                   "3. DELETE[name] : Removes an entity by name. Example: NOVA_CMD:DELETE[OldCube]\n"
+                   "4. PHYSICS[name] : Adds Rigidbody and Box Collider to an object. Example: NOVA_CMD:PHYSICS[Crate]\n"
+                   "5. CLEAR[] : Deletes ALL entities in the scene. USE THIS to REDO or RESTORE the level from scratch.\n"
+                   "TIPS:\n"
+                   "- To build a city or complex area, output 10-20 SPAWN commands in a single message.\n"
+                   "- If user says 'redo this whole area', start your response with NOVA_CMD:CLEAR[] and then spawn new ones.";
         }
 
         static const std::map<std::string, AgentRole>& GetRoles() {
