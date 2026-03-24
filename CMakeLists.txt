@@ -42,7 +42,14 @@ FetchContent_Declare(
     GIT_SHALLOW    TRUE
 )
 
-FetchContent_MakeAvailable(SDL2 spdlog imgui reactphysics3d nlohmann_json)
+FetchContent_Declare(
+    cpp-httplib
+    GIT_REPOSITORY https://github.com/yhirose/cpp-httplib.git
+    GIT_TAG        v0.18.3
+    GIT_SHALLOW    TRUE
+)
+
+FetchContent_MakeAvailable(SDL2 spdlog imgui reactphysics3d nlohmann_json cpp-httplib)
 
 # ── Setup ImGui Library ──────────────────────────────────────────────────────
 # ImGui doesn't have a modern CMakeLists.txt by default that builds the backends

@@ -20,6 +20,8 @@ add_library(NovaEngine STATIC ${ENGINE_SOURCES} ${ENGINE_HEADERS})
 target_include_directories(NovaEngine PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}/Include"
     "${CMAKE_CURRENT_SOURCE_DIR}/Source"
+    "${cpp-httplib_SOURCE_DIR}"
+    "${nlohmann_json_SOURCE_DIR}/include"
 )
 
 # ── Dependencies ─────────────────────────────────────────────────────────────
@@ -30,6 +32,7 @@ target_link_libraries(NovaEngine PUBLIC
     ImGui
     reactphysics3d
     nlohmann_json::nlohmann_json
+    httplib
     d3d11
     dxgi
     d3dcompiler
