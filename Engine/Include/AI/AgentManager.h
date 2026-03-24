@@ -27,11 +27,11 @@ namespace Nova {
         std::string GetActiveRole() const { return m_ActiveRole; }
 
         // Send a message to the active provider with the active role's system prompt
-        void Ask(const std::string& userPrompt, std::function<void(const std::string&)> callback);
+        void Ask(const std::string& userPrompt, std::function<void(const std::string&)> callback, const std::string& roleOverride = "");
 
     private:
         AgentManager() = default;
-        void ProcessCommand(const std::string& response);
+        void ProcessCommand(const std::string& response, std::function<void(const std::string&)> originalCallback);
         Scene* m_Scene = nullptr;
 
         std::shared_ptr<IAgentProvider> m_Provider;

@@ -8,21 +8,23 @@
 
 namespace Nova {
 
-    void AgentManager::Ask(const std::string& userPrompt, std::function<void(const std::string&)> callback) {
+    void AgentManager::Ask(const std::string& userPrompt, std::function<void(const std::string&)> callback, const std::string& roleOverride) {
         if (!m_Provider) {
             callback("Error: No AI Provider configured.");
             return;
         }
 
         std::vector<AgentMessage> messages;
+        std::string activeRole = roleOverride.empty() ? m_ActiveRole : roleOverride;
+        
         auto const& roles = AgentRoleRegistry::GetRoles();
-        if (roles.count(m_ActiveRole)) {
-            messages.push_back({"system", roles.at(m_ActiveRole).SystemPrompt});
+        if (roles.count(activeRole)) {
+            messages.push_back({"system", roles.at(activeRole).SystemPrompt});
         }
         messages.push_back({"user", userPrompt});
 
         auto wrappedCallback = [this, callback](const std::string& response) {
-            this->ProcessCommand(response);
+            this->ProcessCommand(response, callback);
             callback(response);
         };
 
@@ -31,7 +33,7 @@ namespace Nova {
         }).detach();
     }
 
-    void AgentManager::ProcessCommand(const std::string& response) {
+    void AgentManager::ProcessCommand(const std::string& response, std::function<void(const std::string&)> originalCallback) {
         if (!m_Scene) return;
 
         size_t searchPos = 0;
@@ -72,6 +74,20 @@ namespace Nova {
                             if (s > 0) e->GetTransform().Scale = {s, s, s};
                         }
                     }
+                }
+            }
+            else if (cmd.find("SUB_AGENT") == 0) {
+                std::string role = GetParam(cmd, 0);
+                std::string prompt = GetParam(cmd, 1);
+                
+                if (!role.empty() && !prompt.empty()) {
+                    NOVA_LOG_INFO("Agentic Mode: Triggering Sub-Agent [{}] with prompt: '{}'", role, prompt);
+                    
+                    // Call Ask recursively with role override
+                    this->Ask(prompt, [originalCallback, role](const std::string& subResponse) {
+                        std::string prefix = "\n[SUB_AGENT (" + role + ") RESPONSE]:\n";
+                        originalCallback(prefix + subResponse);
+                    }, role);
                 }
             }
             else if (cmd.find("MOVE") == 0) {

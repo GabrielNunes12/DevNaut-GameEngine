@@ -24,8 +24,9 @@ namespace Nova {
                    "3. DELETE[name] : Removes an entity by name. Example: NOVA_CMD:DELETE[OldCube]\n"
                    "4. PHYSICS[name] : Adds Rigidbody and Box Collider to an object. Example: NOVA_CMD:PHYSICS[Crate]\n"
                    "5. CLEAR[] : Deletes ALL entities in the scene. USE THIS to REDO or RESTORE the level from scratch.\n"
+                   "6. SUB_AGENT[role][prompt] : TRIGGERS AGENTIC MODE. Delegates a task to another specialist. Example: NOVA_CMD:SUB_AGENT[Level Designer][Build a fortress at (0,0,0)]\n"
                    "TIPS:\n"
-                   "- To build a city or complex area, output 10-20 SPAWN commands in a single message.\n"
+                   "- To use Multi-Agentic orchestration, output 2-3 SUB_AGENT calls at once (e.g. one for walls, one for lights).\n"
                    "- If user says 'redo this whole area', start your response with NOVA_CMD:CLEAR[] and then spawn new ones.";
         }
 
