@@ -1,6 +1,5 @@
 # NovaEngine
-
-![Nova Engine AI Assistant](file:///C:/Users/onceu/.gemini/antigravity/brain/37b37125-f1e9-48c6-a158-91a8089758ee/media__1774381581000.png)
+![Nova Engine AI Assistant](image.png)
 
 NovaEngine is a lightweight, modular C++ Game Engine built from the ground up for learning, performance, and extensibility. It features a custom DirectX 11 renderer, an integrated physics engine, a multi-provider AI Agent system, and a feature-rich editor.
 
