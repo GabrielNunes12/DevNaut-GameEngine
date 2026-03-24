@@ -137,6 +137,7 @@ public:
         m_Gizmo.Init(device);
         m_DebugRenderer.Init(device);
         BuildMenu();
+        Nova::AgentManager::Instance().SetScene(&m_Scene);
         NOVA_LOG_INFO("Editor initialized");
     }
 
