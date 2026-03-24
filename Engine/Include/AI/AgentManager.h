@@ -8,6 +8,8 @@
 
 namespace Nova {
 
+    class Scene;
+
     class AgentManager {
     public:
         static AgentManager& Instance() {
@@ -18,6 +20,9 @@ namespace Nova {
         void SetProvider(std::shared_ptr<IAgentProvider> provider) { m_Provider = provider; }
         IAgentProvider* GetProvider() const { return m_Provider.get(); }
 
+        void SetScene(Scene* scene) { m_Scene = scene; }
+        Scene* GetScene() const { return m_Scene; }
+
         void SetActiveRole(const std::string& roleName) { m_ActiveRole = roleName; }
         std::string GetActiveRole() const { return m_ActiveRole; }
 
@@ -26,6 +31,8 @@ namespace Nova {
 
     private:
         AgentManager() = default;
+        void ProcessCommand(const std::string& response);
+        Scene* m_Scene = nullptr;
 
         std::shared_ptr<IAgentProvider> m_Provider;
         std::string m_ActiveRole = "Gameplay Programmer";
