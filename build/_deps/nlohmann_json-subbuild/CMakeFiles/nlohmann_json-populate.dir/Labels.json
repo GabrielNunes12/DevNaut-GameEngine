@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "F:/C++GameEngine/build/_deps/nlohmann_json-subbuild/CMakeFiles/nlohmann_json-populate"
+		},
+		{
+			"file" : "F:/C++GameEngine/build/_deps/nlohmann_json-subbuild/CMakeFiles/da460b4bf53302ddbe1cb8b2ac3f1b16/nlohmann_json-populate.rule"
+		},
+		{
+			"file" : "F:/C++GameEngine/build/_deps/nlohmann_json-subbuild/CMakeFiles/652ddfc01eef8b677a7583e1803ab4e2/nlohmann_json-populate-complete.rule"
+		},
+		{
+			"file" : "F:/C++GameEngine/build/_deps/nlohmann_json-subbuild/CMakeFiles/10e3f9eee43383fe4950a5078f6645db/nlohmann_json-populate-build.rule"
+		},
+		{
+			"file" : "F:/C++GameEngine/build/_deps/nlohmann_json-subbuild/CMakeFiles/10e3f9eee43383fe4950a5078f6645db/nlohmann_json-populate-configure.rule"
+		},
+		{
+			"file" : "F:/C++GameEngine/build/_deps/nlohmann_json-subbuild/CMakeFiles/10e3f9eee43383fe4950a5078f6645db/nlohmann_json-populate-download.rule"
+		},
+		{
+			"file" : "F:/C++GameEngine/build/_deps/nlohmann_json-subbuild/CMakeFiles/10e3f9eee43383fe4950a5078f6645db/nlohmann_json-populate-install.rule"
+		},
+		{
+			"file" : "F:/C++GameEngine/build/_deps/nlohmann_json-subbuild/CMakeFiles/10e3f9eee43383fe4950a5078f6645db/nlohmann_json-populate-mkdir.rule"
+		},
+		{
+			"file" : "F:/C++GameEngine/build/_deps/nlohmann_json-subbuild/CMakeFiles/10e3f9eee43383fe4950a5078f6645db/nlohmann_json-populate-patch.rule"
+		},
+		{
+			"file" : "F:/C++GameEngine/build/_deps/nlohmann_json-subbuild/CMakeFiles/10e3f9eee43383fe4950a5078f6645db/nlohmann_json-populate-test.rule"
+		},
+		{
+			"file" : "F:/C++GameEngine/build/_deps/nlohmann_json-subbuild/CMakeFiles/10e3f9eee43383fe4950a5078f6645db/nlohmann_json-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"nlohmann_json-populate"
+		],
+		"name" : "nlohmann_json-populate"
+	}
+}

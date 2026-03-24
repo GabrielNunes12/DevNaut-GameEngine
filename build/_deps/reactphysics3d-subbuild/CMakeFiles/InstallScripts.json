@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"F:/C++GameEngine/build/_deps/reactphysics3d-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,13 @@
+{
+	"InstallScripts" : 
+	[
+		"F:/C++GameEngine/build/cmake_install.cmake",
+		"F:/C++GameEngine/build/_deps/sdl2-build/cmake_install.cmake",
+		"F:/C++GameEngine/build/_deps/spdlog-build/cmake_install.cmake",
+		"F:/C++GameEngine/build/_deps/reactphysics3d-build/cmake_install.cmake",
+		"F:/C++GameEngine/build/_deps/nlohmann_json-build/cmake_install.cmake",
+		"F:/C++GameEngine/build/Engine/cmake_install.cmake",
+		"F:/C++GameEngine/build/Editor/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

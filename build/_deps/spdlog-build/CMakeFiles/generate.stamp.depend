@@ -1,0 +1,12 @@
+# CMake generation dependency list for this directory.
+F:/C++GameEngine/build/_deps/spdlog-src/CMakeLists.txt
+F:/C++GameEngine/build/_deps/spdlog-src/cmake/ide.cmake
+F:/C++GameEngine/build/_deps/spdlog-src/cmake/utils.cmake
+F:/CMake/share/cmake-4.3/Modules/CheckCXXSourceCompiles.cmake
+F:/CMake/share/cmake-4.3/Modules/CheckIncludeFileCXX.cmake
+F:/CMake/share/cmake-4.3/Modules/CheckLibraryExists.cmake
+F:/CMake/share/cmake-4.3/Modules/CheckSymbolExists.cmake
+F:/CMake/share/cmake-4.3/Modules/FindPackageHandleStandardArgs.cmake
+F:/CMake/share/cmake-4.3/Modules/FindPackageMessage.cmake
+F:/CMake/share/cmake-4.3/Modules/FindThreads.cmake
+F:/CMake/share/cmake-4.3/Modules/GNUInstallDirs.cmake

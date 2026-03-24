@@ -1,0 +1,150 @@
+^F:\C++GAMEENGINE\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKEFILES\BFFE33E659B1F2A0A85AF39487D57944\SPDLOG-POPULATE-MKDIR.RULE
+setlocal
+F:\CMake\bin\cmake.exe -Dcfgdir=/Debug -P F:/C++GameEngine/build/_deps/spdlog-subbuild/spdlog-populate-prefix/tmp/spdlog-populate-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E touch F:/C++GameEngine/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/Debug/spdlog-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\C++GAMEENGINE\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKEFILES\BFFE33E659B1F2A0A85AF39487D57944\SPDLOG-POPULATE-DOWNLOAD.RULE
+setlocal
+cd F:\C++GameEngine\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P F:/C++GameEngine/build/_deps/spdlog-subbuild/spdlog-populate-prefix/tmp/spdlog-populate-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E touch F:/C++GameEngine/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/Debug/spdlog-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\C++GAMEENGINE\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKEFILES\BFFE33E659B1F2A0A85AF39487D57944\SPDLOG-POPULATE-UPDATE.RULE
+setlocal
+cd F:\C++GameEngine\build\_deps\spdlog-src
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -Dcan_fetch=YES -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P F:/C++GameEngine/build/_deps/spdlog-subbuild/spdlog-populate-prefix/tmp/spdlog-populate-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\C++GAMEENGINE\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKEFILES\BFFE33E659B1F2A0A85AF39487D57944\SPDLOG-POPULATE-PATCH.RULE
+setlocal
+F:\CMake\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E touch F:/C++GameEngine/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/Debug/spdlog-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\C++GAMEENGINE\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKEFILES\BFFE33E659B1F2A0A85AF39487D57944\SPDLOG-POPULATE-CONFIGURE.RULE
+setlocal
+cd F:\C++GameEngine\build\_deps\spdlog-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E touch F:/C++GameEngine/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/Debug/spdlog-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\C++GAMEENGINE\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKEFILES\BFFE33E659B1F2A0A85AF39487D57944\SPDLOG-POPULATE-BUILD.RULE
+setlocal
+cd F:\C++GameEngine\build\_deps\spdlog-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E touch F:/C++GameEngine/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/Debug/spdlog-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\C++GAMEENGINE\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKEFILES\BFFE33E659B1F2A0A85AF39487D57944\SPDLOG-POPULATE-INSTALL.RULE
+setlocal
+cd F:\C++GameEngine\build\_deps\spdlog-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E touch F:/C++GameEngine/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/Debug/spdlog-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\C++GAMEENGINE\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKEFILES\BFFE33E659B1F2A0A85AF39487D57944\SPDLOG-POPULATE-TEST.RULE
+setlocal
+cd F:\C++GameEngine\build\_deps\spdlog-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E touch F:/C++GameEngine/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/Debug/spdlog-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\C++GAMEENGINE\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKEFILES\F31C4B04BAECD19CA9E211D14963BF9B\SPDLOG-POPULATE-COMPLETE.RULE
+setlocal
+F:\CMake\bin\cmake.exe -E make_directory F:/C++GameEngine/build/_deps/spdlog-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E touch F:/C++GameEngine/build/_deps/spdlog-subbuild/CMakeFiles/Debug/spdlog-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+F:\CMake\bin\cmake.exe -E touch F:/C++GameEngine/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/Debug/spdlog-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\C++GAMEENGINE\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKEFILES\BAC7CD1AFC128C72459C533A6584E2A4\SPDLOG-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^F:\C++GAMEENGINE\BUILD\_DEPS\SPDLOG-SUBBUILD\CMAKELISTS.TXT
+setlocal
+F:\CMake\bin\cmake.exe -SF:/C++GameEngine/build/_deps/spdlog-subbuild -BF:/C++GameEngine/build/_deps/spdlog-subbuild --check-stamp-file F:/C++GameEngine/build/_deps/spdlog-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+F:/C++GameEngine/build/_deps/reactphysics3d-src/CMakeLists.txt
+F:/CMake/share/cmake-4.3/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
+F:/CMake/share/cmake-4.3/Modules/CMakePackageConfigHelpers.cmake
+F:/CMake/share/cmake-4.3/Modules/GNUInstallDirs.cmake
+F:/CMake/share/cmake-4.3/Modules/WriteBasicConfigVersionFile.cmake

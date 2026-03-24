@@ -1,0 +1,16 @@
+[18:18:27] [NOVA] Logger initialized
+[18:18:27] [NOVA] DevNautEngine v0.1.0
+[18:18:27] [NOVA] Window created: 1280x720 - "Nova Engine — Editor"
+[18:18:27] [NOVA] DirectX 11 initialized — Feature Level 11.1
+[18:18:27] [NOVA] Renderer initialized
+[18:18:27] [NOVA] Engine initialized successfully
+[18:18:27] [NOVA] ImGui initialized
+[18:18:27] [NOVA] Shaders compiled successfully
+[18:18:27] [NOVA] Scene: Added entity 'Cube' (id=1, type=0)
+[18:18:28] [APP] Editor initialized — Controls:
+[18:18:28] [APP]   Left Click         : Select object (via Hierarchy or screen)
+[18:18:28] [APP]   Right Mouse + Drag : Move selected object (X/Y)
+[18:18:28] [APP]   Scroll Wheel       : Move selected object (Z)
+[18:18:28] [APP]   Q/E keys           : Rotate selected object (Z)
+[18:18:28] [APP]   R key              : Reset selected object transform
+[18:18:28] [APP]   Escape             : Deselect

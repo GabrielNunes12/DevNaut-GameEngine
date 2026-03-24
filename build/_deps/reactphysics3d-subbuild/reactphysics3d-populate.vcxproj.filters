@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeFiles\bdbdfb6d722a6069ed776b69cb7ff149\reactphysics3d-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeFiles\bdbdfb6d722a6069ed776b69cb7ff149\reactphysics3d-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeFiles\bdbdfb6d722a6069ed776b69cb7ff149\reactphysics3d-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeFiles\bdbdfb6d722a6069ed776b69cb7ff149\reactphysics3d-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeFiles\bdbdfb6d722a6069ed776b69cb7ff149\reactphysics3d-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeFiles\bdbdfb6d722a6069ed776b69cb7ff149\reactphysics3d-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeFiles\bdbdfb6d722a6069ed776b69cb7ff149\reactphysics3d-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeFiles\bdbdfb6d722a6069ed776b69cb7ff149\reactphysics3d-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeFiles\bd0fd4573da0e9439f044f65ff521133\reactphysics3d-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeFiles\a1bd1daa917b96123ec7df6938f4e24a\reactphysics3d-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="F:\C++GameEngine\build\_deps\reactphysics3d-subbuild\CMakeFiles\reactphysics3d-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E18F3A4C-9B70-317A-A056-B1F200BFD033}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
