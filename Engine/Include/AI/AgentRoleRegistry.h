@@ -25,8 +25,10 @@ namespace Nova {
                    "4. PHYSICS[name] : Adds Rigidbody and Box Collider to an object. Example: NOVA_CMD:PHYSICS[Crate]\n"
                    "5. CLEAR[] : Deletes ALL entities in the scene. USE THIS to REDO or RESTORE the level from scratch.\n"
                    "6. SUB_AGENT[role][prompt] : TRIGGERS AGENTIC MODE. Delegates a task to another specialist. Example: NOVA_CMD:SUB_AGENT[Level Designer][Build a fortress at (0,0,0)]\n"
+                   "7. MESHY_SPAWN[prompt][name] : TRIGGERS HIGH-FIDELITY 3D MESH GENERATION via Meshy.ai. Creates unique environmental assets or actors from a natural language prompt. Example: NOVA_CMD:MESHY_SPAWN[A medieval wooden tavern][Tavern]\n"
                    "TIPS:\n"
                    "- To use Multi-Agentic orchestration, output 2-3 SUB_AGENT calls at once (e.g. one for walls, one for lights).\n"
+                   "- Use MESHY_SPAWN for unique objects that don't exist as primitives (e.g., 'A futuristic spaceship interior', 'An ancient stone fountain').\n"
                    "- If user says 'redo this whole area', start your response with NOVA_CMD:CLEAR[] and then spawn new ones.";
         }
 

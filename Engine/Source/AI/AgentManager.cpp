@@ -118,6 +118,66 @@ namespace Nova {
                 m_Scene->Clear();
                 NOVA_LOG_INFO("AI Action: Scene CLEARED for rebuild.");
             }
+            else if (cmd.find("MESHY_SPAWN") == 0) {
+                std::string prompt = GetParam(cmd, 0);
+                std::string name = GetParam(cmd, 1);
+
+                if (m_MeshyProvider && !prompt.empty()) {
+                    NOVA_LOG_INFO("Agentic Mode: Starting 3D Generation for '{}' via MESHY...", name);
+                    
+                    std::vector<AgentMessage> genMsgs;
+                    genMsgs.push_back({"user", prompt});
+                    
+                    m_MeshyProvider->SendRequest(genMsgs, [originalCallback, name](const std::string& res) {
+                        originalCallback("\n[MESHY 3D STATUS]: " + res);
+                    });
+
+                    // Spawn placeholder until mesh is ready
+                    m_Scene->AddEntity(name + " (Pending Meshy)", EntityType::Mesh);
+                } else {
+                    originalCallback("\nError: Meshy AI Provider not configured.");
+                }
+            }
+            else if (cmd.find("TRIPO_SPAWN") == 0) {
+                std::string prompt = GetParam(cmd, 0);
+                std::string name = GetParam(cmd, 1);
+
+                if (m_TripoProvider && !prompt.empty()) {
+                    NOVA_LOG_INFO("Agentic Mode: Starting 3D Generation for '{}' via TRIPO...", name);
+                    
+                    std::vector<AgentMessage> genMsgs;
+                    genMsgs.push_back({"user", prompt});
+                    
+                    m_TripoProvider->SendRequest(genMsgs, [originalCallback, name](const std::string& res) {
+                        originalCallback("\n[TRIPO 3D STATUS]: " + res);
+                    });
+
+                    // Spawn placeholder until mesh is ready
+                    m_Scene->AddEntity(name + " (Pending Tripo)", EntityType::Mesh);
+                } else {
+                    originalCallback("\nError: Tripo AI Provider not configured.");
+                }
+            }
+            else if (cmd.find("HF_SPAWN") == 0) {
+                std::string prompt = GetParam(cmd, 0);
+                std::string name = GetParam(cmd, 1);
+
+                if (m_HFProvider && !prompt.empty()) {
+                    NOVA_LOG_INFO("Agentic Mode: Starting 3D Generation for '{}' via Hugging Face/Open-Source...", name);
+                    
+                    std::vector<AgentMessage> genMsgs;
+                    genMsgs.push_back({"user", prompt});
+                    
+                    m_HFProvider->SendRequest(genMsgs, [originalCallback, name](const std::string& res) {
+                        originalCallback("\n[HF (Open Source) 3D STATUS]: " + res);
+                    });
+
+                    // Spawn placeholder until mesh is ready
+                    m_Scene->AddEntity(name + " (Pending HF)", EntityType::Mesh);
+                } else {
+                    originalCallback("\nError: Hugging Face/Open Source Provider not configured.");
+                }
+            }
         }
     }
 

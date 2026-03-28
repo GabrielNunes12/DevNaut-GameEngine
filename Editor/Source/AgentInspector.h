@@ -5,6 +5,9 @@
 #include "AI/GeminiProvider.h"
 #include "AI/OpenAIProvider.h"
 #include "AI/ClaudeProvider.h"
+#include "AI/MeshyProvider.h"
+#include "AI/TripoProvider.h"
+#include "AI/HuggingFaceProvider.h"
 #include "AI/LocalProvider.h"
 #include <string>
 #include <vector>
@@ -22,7 +25,7 @@ namespace Nova {
                     // --- Gemini ---
                     if (ImGui::BeginTabItem("Gemini")) {
                         static char apiKey[128] = "";
-                        static char model[64] = "gemini-1.5-flash";
+                        static char model[64] = "gemini-2.5-flash";
                         ImGui::InputText("API Key##Gemini", apiKey, sizeof(apiKey), ImGuiInputTextFlags_Password);
                         ImGui::InputText("Model##Gemini", model, sizeof(model));
                         if (ImGui::Button("Connect Gemini")) {
@@ -61,6 +64,57 @@ namespace Nova {
                         }
                         ImGui::EndTabItem();
                     }
+                    // --- Meshy (3D) ---
+                    if (ImGui::BeginTabItem("Meshy (3D)")) {
+                        static char apiKey[128] = "";
+                        ImGui::InputText("Meshy API Key", apiKey, sizeof(apiKey), ImGuiInputTextFlags_Password);
+                        if (ImGui::Button("Connect Meshy")) {
+                            auto provider = std::make_shared<MeshyProvider>(apiKey);
+                            AgentManager::Instance().SetMeshyProvider(provider);
+                            m_StatusMessage = "Meshy 3D Connected.";
+                        }
+                        ImGui::TextDisabled("Status: %s", AgentManager::Instance().GetMeshyProvider() ? "Active" : "Not Linked");
+                        ImGui::EndTabItem();
+                    }
+                    // --- Tripo (3D) ---
+                    if (ImGui::BeginTabItem("Tripo (3D)")) {
+                        static char apiKey[128] = "";
+                        ImGui::InputText("Tripo API Key", apiKey, sizeof(apiKey), ImGuiInputTextFlags_Password);
+                        if (ImGui::Button("Connect Tripo")) {
+                            auto provider = std::make_shared<TripoProvider>(apiKey);
+                            AgentManager::Instance().SetTripoProvider(provider);
+                            m_StatusMessage = "Tripo 3D Connected.";
+                        }
+                        ImGui::TextDisabled("Status: %s", AgentManager::Instance().GetTripoProvider() ? "Active" : "Not Linked");
+                        ImGui::EndTabItem();
+                    }
+                    // --- Hugging Face (Open Source AI + 3D) ---
+                    if (ImGui::BeginTabItem("HuggingFace (OS)")) {
+                        static char apiKey[128] = "";
+                        static char model[128] = "mistralai/Mistral-7B-Instruct-v0.3";
+                        ImGui::InputText("User Token (HF)", apiKey, sizeof(apiKey), ImGuiInputTextFlags_Password);
+                        ImGui::InputText("Model ID", model, sizeof(model));
+                        
+                        if (ImGui::Button("Connect as Brain")) {
+                            auto hf = std::make_shared<HuggingFaceProvider>(apiKey);
+                            hf->SetModel(model);
+                            AgentManager::Instance().SetProvider(hf);
+                            AgentManager::Instance().SetHFProvider(hf); 
+                            m_StatusMessage = "Hugging Face (Open Source) Activated as Primary Brain.";
+                        }
+                        ImGui::SameLine();
+                        if (ImGui::Button("Connect 3D Only")) {
+                            auto hf = std::make_shared<HuggingFaceProvider>(apiKey);
+                            hf->SetModel("openai/shap-e");
+                            AgentManager::Instance().SetHFProvider(hf);
+                            m_StatusMessage = "Hugging Face Connected for 3D Tasks.";
+                        }
+                        
+                        ImGui::TextDisabled("Brain: %s | 3D: %s", 
+                            (AgentManager::Instance().GetProvider() && AgentManager::Instance().GetProvider()->GetName().find("Hugging Face") != std::string::npos) ? "Active" : "Not Primary",
+                            AgentManager::Instance().GetHFProvider() ? "Active" : "Not Linked");
+                        ImGui::EndTabItem();
+                    }
                     // --- Local ---
                     if (ImGui::BeginTabItem("Local")) {
                         static char endpoint[256] = "http://localhost:11434/v1/chat/completions";
@@ -78,9 +132,11 @@ namespace Nova {
                     ImGui::EndTabBar();
                 }
                 
-                ImGui::TextColored(ImVec4(0, 1, 0, 1), "Active: %s | %s", 
+                ImGui::Separator();
+                ImGui::TextColored(ImVec4(0, 1, 0, 1), "AI: %s | 3D: %s", 
                     AgentManager::Instance().GetProvider() ? AgentManager::Instance().GetProvider()->GetName().c_str() : "None",
-                    m_StatusMessage.c_str());
+                    (AgentManager::Instance().GetMeshyProvider() || AgentManager::Instance().GetTripoProvider() || AgentManager::Instance().GetHFProvider()) ? "Active" : "None");
+                ImGui::TextDisabled("Status: %s", m_StatusMessage.c_str());
             }
 
             ImGui::Separator();
